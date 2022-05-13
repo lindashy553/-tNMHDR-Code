@@ -1,0 +1,2 @@
+# -tNMHDR-Code
+Func WM_NOTIFY($hWnd, $iMsg, $wParam, $lParam) #forceref $hWnd, $iMsg, $wParam ; "call the relevant _GUIListViewEx_WM_#####_Handler from within the existing handler" _GUIListViewEx_WM_NOTIFY_Handler($hWnd, $iMsg, $wParam, $lParam) Local $tNMHDR, $hWndFrom, $iCode ; , $iIDFrom $tNMHDR = DllStructCreate($tagNMHDR, $lParam) $hWndFrom = DllStructGetData($tNMHDR, "hWndFrom") $iCode = DllStructGetData($tNMHDR, "Code") ; $iIDFrom = DllStructGetData($tNMHDR, "IDFrom") Switch $hWndFrom
